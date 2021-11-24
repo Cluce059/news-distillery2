@@ -60,19 +60,25 @@ export const deleteArticle = (articleId, token) => {
 const KEY = process.env.REACT_APP_API_KEY;
 
 export const searchArticles = (query) => {
-    return fetch(`https://newsdata.io/api/1/news?apikey=${KEY}&q=${query}`, {
-mode: 'no-cors',
- headers: {
-  Accept: 'application/json',
-},
-}).then(response => {
-if (response.ok) {
-  response.json().then(json => {
-    console.log(json);
-  });
+  return fetch(`https://newsdata.io/api/1/news?apikey=${KEY}&q=${query}`)
 }
-});
-};
+
+
+
+// export const searchArticles = (query) => {
+//     return fetch(`https://newsdata.io/api/1/news?apikey=${KEY}&q=${query}`, {
+// mode: 'no-cors',
+//  headers: {
+//   Accept: 'application/json',
+// },
+// }).then(response => {
+// if (response.ok) {
+//   response.json().then(json => {
+//     console.log(json);
+//   });
+// }
+// });
+// };
 
 // export const searchArticles= (query) => {
 //   return fetch(`https://newsdata.io/api/1/news?apikey=${KEY}&q=${query}`, {
