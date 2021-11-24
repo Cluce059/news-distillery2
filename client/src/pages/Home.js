@@ -75,9 +75,9 @@ const Home = () => {
             const response = await searchArticles(searchInput);
             console.log(searchInput);
             console.log(response);
-            if (!response.ok) {
-              throw new Error('something went wrong!');
-            }
+            // if (!response.ok) {
+            //   throw new Error('something went wrong!');
+            // }
       
             const { articles } = await response.json();
             console.log(articles);

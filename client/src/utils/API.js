@@ -61,8 +61,10 @@ const KEY = process.env.REACT_APP_API_KEY;
 
 export const searchArticles = (query) => {
   return fetch(`https://newsdata.io/api/1/news?apikey=${KEY}&q=${query}`)
+  
 }
-
+/**  mode: 'no-cors'
+  }) */
 
 
 // export const searchArticles = (query) => {
