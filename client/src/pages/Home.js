@@ -73,7 +73,8 @@ const Home = () => {
           try {
               //response == api fetch + query
             const response = await searchArticles(searchInput);
-      
+            console.log(searchInput);
+            console.log(response);
             if (!response.ok) {
               throw new Error('something went wrong!');
             }
@@ -82,11 +83,11 @@ const Home = () => {
             console.log(articles);
             const articleData = articles.map((article) => ({
                 articleId: uniqid(),
-                author: article.author,
+                author: article.creator,
                 title: article.title,
                 description: article.description,
-                url: article.url,
-                urlToImage: article.urlToImage,
+                url: article.link,
+                urlToImage: article.image_url,
                 content: article.content
               }))
           

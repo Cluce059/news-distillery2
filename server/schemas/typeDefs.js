@@ -17,11 +17,11 @@ type User {
 
 type Article{
     articleId: String
-    author: [String]
+    creator: String
     title: String
-    urlToImage: String
+    link: String
     description: String
-    url: String
+    image_url: String
     content: String
 }
 
@@ -32,11 +32,11 @@ type Auth {
 
 input articleInput{
     articleId: String
-    author: [String]
+    creator: String
     title: String
     description: String
-    urlToImage: String
-    url: String
+    image_url: String
+    link: String
     content: String
 }
 
@@ -49,8 +49,4 @@ type Mutation{
 `;
 //  https://egghead.io/lessons/apollo-wrap-graphql-mutation-arguments-with-a-graphql-input-type
 module.exports = typeDefs;
-<<<<<<< HEAD
 //   
-=======
-//   
->>>>>>> 392069d336c7ba51e56f98a6fa9d562f5a0bc132

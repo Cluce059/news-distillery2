@@ -59,7 +59,32 @@ export const deleteArticle = (articleId, token) => {
 // https://newsapi.org/v2/everything?q=bitcoin
 const KEY = process.env.REACT_APP_API_KEY;
 
-export const searchArticles= (query) => {
-    return fetch(`https://newsapi.org/v2/everything?q=${query}&apiKey=${KEY}`);
+export const searchArticles = (query) => {
+    return fetch(`https://newsdata.io/api/1/news?apikey=${KEY}&q=${query}`, {
+mode: 'no-cors',
+ headers: {
+  Accept: 'application/json',
+},
+}).then(response => {
+if (response.ok) {
+  response.json().then(json => {
+    console.log(json);
+  });
+}
+});
 };
+
+// export const searchArticles= (query) => {
+//   return fetch(`https://newsdata.io/api/1/news?apikey=${KEY}&q=${query}`, {
+//     mode: 'no-cors'
+//     })
+// .then(response => response.json())
+// .then(json => {
+//   console.log('parsed json', json) // access json.body here
+// })
+// };
+//    mode: 'no-cors',
+
+//news?apikey=YOUR_API_KEY&q=
+//https://newsdata.io/api/1/news?apikey=pub_2398a83dfa5171a2512c037ea75cb70ac71f
 

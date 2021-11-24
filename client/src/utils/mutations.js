@@ -23,11 +23,12 @@ mutation addUser($username: String!, $password: String!, $email: String!){
             articleCount
             savedArticles {       
                 articleId
-                author
-                description
+                creator
                 title
-                urlToImage
-                url
+                description
+                image_url
+                link
+                content
               }
         }  
     }
@@ -43,11 +44,11 @@ mutation saveArticle($input: articleInput!){
         articleCount
         savedArticles{           
             articleId
-            author
+            creator
             title
             description
-            urlToImage
-            url
+            image_url
+            link
             content
           }
         }
@@ -63,11 +64,11 @@ export const REMOVE_ARTICLE = gql`
             articleCount
             savedArticles{
                 articleId
-                author
+                creator
                 title
                 description
-                urlToImage
-                url
+                image_url
+                link
                 content
             }
         }

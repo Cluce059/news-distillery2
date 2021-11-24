@@ -4,22 +4,18 @@ const { Schema } = require('mongoose');
 const articleSchema = new Schema({
   title: {
     type: String,
-    required: true,
   },
-  author:
-  [
+  creator:
     {
       type: String,
-    }
-  ],
+    },
   description: {
     type: String,
-    required: true,
   },
-  urlToImage: {
+  image_url: {
     type: String,
   },
-  url: {
+  link: {
     type: String,
     required: true,
   },
